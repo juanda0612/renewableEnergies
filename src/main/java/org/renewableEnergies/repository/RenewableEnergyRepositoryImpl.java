@@ -20,8 +20,7 @@ public class RenewableEnergyRepositoryImpl implements RenewableEnergyRepository{
 
         //Location location = new Location(0,"pais imaginario", 2024);
 
-        String sql = "INSERT INTO location(name, year) SELECT ?, ?" +
-                " WHERE NOT EXISTS(SELECT 1 FROM location WHERE name = ? AND year = ?)";
+        String sql = "INSERT INTO location(name, year) SELECT ?, ? WHERE NOT EXISTS(SELECT 1 FROM location WHERE name = ? AND year = ?)";
 
         try{
             preparedStatement = conexion.connect().prepareStatement(sql);

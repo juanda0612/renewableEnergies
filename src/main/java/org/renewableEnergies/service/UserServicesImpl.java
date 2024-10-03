@@ -16,11 +16,12 @@ public class UserServicesImpl implements UserServices{
     }
 
     @Override
-    public boolean add(String name, String lastname, String userName, String email, String password) {
+    public boolean add(String firstname, String lastname, String userName, String email, String password) {
         return this.userRepository.add(
                 new User(
                         new MyEntity().getId(),
-                        name.toLowerCase(),
+                        "basic",
+                        firstname.toLowerCase(),
                         lastname.toLowerCase(),
                         userName.toLowerCase(),
                         email.toLowerCase(),

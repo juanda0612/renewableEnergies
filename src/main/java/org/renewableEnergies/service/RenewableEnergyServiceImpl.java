@@ -16,10 +16,10 @@ public class RenewableEnergyServiceImpl implements RenewableEnergyService {
     RenewableEnergyRepository renewableEnergyRepository = new RenewableEnergyRepositoryImpl();
 
     public void loadData() {
-        List<Location> locationListConsumtion = consumption.getLocations();
+        List<Location> locationListConsumption = consumption.getLocations();
         List<Location> locationListProduction = production.getLocations();
         
-        renewableEnergyRepository.addBdLocation(locationListConsumtion);
+        renewableEnergyRepository.addBdLocation(locationListConsumption);
         renewableEnergyRepository.addBdLocation(locationListProduction);
     }
 

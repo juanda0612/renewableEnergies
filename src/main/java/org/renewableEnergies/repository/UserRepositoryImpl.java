@@ -17,7 +17,7 @@ public class UserRepositoryImpl implements UserRepository{
 
     @Override
     public boolean add(User user) {
-        String sql = "INSERT INTO user(name, lastname, username, email, password) VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO user(firstname, lastname, username, email, password) VALUES(?, ?, ?, ?, ?)";
         try{
             preparedStatement = conexion.connect().prepareStatement(sql);
             preparedStatement.setString(1, user.firstname());
@@ -52,7 +52,8 @@ public class UserRepositoryImpl implements UserRepository{
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getString(5),
-                        resultSet.getString(6)
+                        resultSet.getString(6),
+                        resultSet.getString(7)
                 );
                 System.out.println(user);
                 return user;

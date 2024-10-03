@@ -1,7 +1,7 @@
 package org.renewableEnergies.model;
 
 public record User(
-        int id,
+        String id,
         String userType,
         String firstname,
         String lastName,
